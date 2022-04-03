@@ -1,5 +1,7 @@
 const Server = require('./lib/server');
-const server = new Server();
+const config = require('./config');
+
+const server = new Server(config);
 
 process.on('SIGTERM', function () {
     if (server !== undefined) {
